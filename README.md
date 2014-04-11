@@ -32,15 +32,18 @@ Usage
 python $path/pacMonStr_V1.py $path/test.m5 $path/test.binned_anchors $flank $numCore $runDir
 
 where,
-path="The location of PacmonSTR directory"
-$path/test.m5 = The input alignment between the long reads data and the reference. Here .m5 format which is an output of 'Blasr' tool is assumed.
-$path/test.binned_anchors = The long reads (based on their alignement start and end positions with respect to the reference) that span the TR event (defined for each chromosome by their start position, end position, repeat element, repeat period, repeat multiplicity, among other attributes) are written in this file with their flanking distance upstream and downstream of the TR event.
-$flank = The flanking distance upstream and downstream of the TR event. They are assumed to be same.
-$numCore = Number of processors to be used. The pipeline uses multiprocessing library (which is in standard python) for spawning processes via pool.
-$runDir = The directory where the output files should be generated. Please note that using multiple processors results in writing of many out files and this can be controlled by modifying the value of 'num' variable in the source code. Right now it uses a factor of 1.0/0.05. This parameter is used to partition the dictionary queryAligns, and passes that partition to a processor via pool. Higher the number lower the number of partitions created.
+a) path="The location of PacmonSTR directory"
 
-2. For running the clustering part of the pipeline, please run the following:
-source runClustering.sh
-This script processes the output from the previous step and uses that as an input for the gmmCluster/clusteringGMM_AIC_cSep.py. The input parameters for clustering are specified in the script.
+b) $path/test.m5 = The input alignment between the long reads data and the reference. Here .m5 format which is an output of 'Blasr' tool is assumed.
+
+c) $path/test.binned_anchors = The long reads (based on their alignement start and end positions with respect to the reference) that span the TR event (defined for each chromosome by their start position, end position, repeat element, repeat period, repeat multiplicity, among other attributes) are written in this file with their flanking distance upstream and downstream of the TR event.
+
+d) $flank = The flanking distance upstream and downstream of the TR event. They are assumed to be same.
+
+e) $numCore = Number of processors to be used. The pipeline uses multiprocessing library (which is in standard python) for spawning processes via pool.
+
+f) $runDir = The directory where the output files should be generated. Please note that using multiple processors results in writing of many out files and this can be controlled by modifying the value of 'num' variable in the source code. Right now it uses a factor of 1.0/0.05. This parameter is used to partition the dictionary queryAligns, and passes that partition to a processor via pool. Higher the number lower the number of partitions created.
+
+2. For running the clustering part of the pipeline, please run 'source runClustering.sh'. This script processes the output from the previous step and uses that as an input for the gmmCluster/clusteringGMM_AIC_cSep.py. The input parameters for clustering are specified in the script.
 
 
