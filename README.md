@@ -46,9 +46,11 @@ where,
 
 B. For running the clustering part of the pipeline, please run:
 source runClustering.sh $pathDirInput $pathDirOutput
+
 where,
-pathDirInput="location of directory where the *out* from previous step is located"
-pathDirOutput="location of directory where the clustering output files are written"
+1. pathDirInput="location of directory where the *out* from previous step is located"
+
+2. pathDirOutput="location of directory where the clustering output files are written"
 
 This script processes the output from the previous step and uses that as an input for the gmmCluster/clusteringGMM_AIC_cSep.py. The input parameters for clustering are specified in the script. The script writes the output file by creating a directory 'clusterRun' in the user specified location for clustering output files.
 
