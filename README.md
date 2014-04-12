@@ -44,6 +44,12 @@ where,
 
 6. $runDir = The directory where the output files should be generated. Please note that using multiple processors results in writing of many out files and this can be controlled by modifying the value of 'num' variable in the source code. Right now it uses a factor of 1.0/0.05. This parameter is used to partition the dictionary queryAligns, and passes that partition to a processor via pool. Higher the number lower the number of partitions created.
 
-B. For running the clustering part of the pipeline, please run 'source runClustering.sh'. This script processes the output from the previous step and uses that as an input for the gmmCluster/clusteringGMM_AIC_cSep.py. The input parameters for clustering are specified in the script.
+B. For running the clustering part of the pipeline, please run:
+source runClustering.sh $pathDirInput $pathDirOutput
+where,
+pathDirInput="location of directory where the *out* from previous step is located"
+pathDirOutput="location of directory where the clustering output files are written"
+
+This script processes the output from the previous step and uses that as an input for the gmmCluster/clusteringGMM_AIC_cSep.py. The input parameters for clustering are specified in the script. The script writes the output file by creating a directory 'clusterRun' in the user specified location for clustering output files.
 
 
