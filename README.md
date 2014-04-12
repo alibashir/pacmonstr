@@ -31,7 +31,7 @@ Usage
 A. For running the pipeline, please run the following:
 python $path/pacMonStr_V1.py $path/test.m5 $path/test.binned_anchors $flank $numCore $runDir
 
-where,
+Where:
 1. path="The location of PacmonSTR directory"
 
 2. $path/test.m5 = The input alignment between the long reads data and the reference. Here .m5 format which is an output of 'Blasr' tool is assumed.
@@ -47,7 +47,7 @@ where,
 B. For running the clustering part of the pipeline, please run:
 source runClustering.sh $pathDirInput $pathDirOutput
 
-where,
+Where:
 1. pathDirInput="location of directory where the *out* from previous step is located"
 
 2. pathDirOutput="location of directory where the clustering output files are written"
