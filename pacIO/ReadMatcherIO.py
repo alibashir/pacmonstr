@@ -1,5 +1,5 @@
 from itertools import *
-from model.AlignmentHit import AlignmentHit
+from pacModel.AlignmentHit import AlignmentHit
 
 def parseRm5( file ):
     """Parses readmatcher -printFormat 5 output into AlignmentHit objects"""
