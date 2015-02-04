@@ -1,4 +1,4 @@
-from model.Sequence import revcomp as rc
+from pacModel.Sequence import revcomp as rc
 import sys
 
 class AlignmentHit:
