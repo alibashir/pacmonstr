@@ -1,5 +1,5 @@
 from itertools import *
-from model.binLine import binLine
+from pacModel.binLine import binLine
 
 def parsebinf(file):
     for line in open(file):
