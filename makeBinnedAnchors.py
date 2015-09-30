@@ -47,8 +47,9 @@ for key in repeatDict.keys():
 
 print 'Done sorting.'
 
+fOut = open(m5In.replace('.m5','.binned_anchors'),'w')
+
 for entry in open(m5In):
-    fOut = open(m5In.replace('.m5','.binned_anchors'),'w')
     m = entry.split()
     if m[5] not in repeatDict:
 	continue
