@@ -6,17 +6,17 @@ def parseRm5( file ):
 
     for line in open(file):
         #print line
-        values = line.rstrip("\n").split(" ")
+        values = line.rstrip("\n").split()
         hit = AlignmentHit()
         hit.query_id, hit.query_length, hit.query_start, hit.query_end, hit.query_strand = values[0], int(values[1]), int(values[2]), int(values[3]), values[4]
 
-        hit.target_id, hit.target_length, hit.target_start, hit.target_end, hit.target_strand = values[6], int(values[7]), int(values[8]), int(values[9]), values[10]
-        hit.score = -1*int(values[11])
+        hit.target_id, hit.target_length, hit.target_start, hit.target_end, hit.target_strand = values[5], int(values[6]), int(values[7]), int(values[8]), values[9]
+        hit.score = -1*int(values[10])
         #target_id = values[6] because there is white space in the m5 file before target_id
  
         hit.query_id = "/".join(hit.query_id.split("/")[0:3])
  
-        hit.alignedQuery = values[17]
+        hit.alignedQuery = values[16]
         hit.QueryStrOrg = hit.alignedQuery
         tempQList = []
         tempQList = list(hit.alignedQuery)
@@ -25,7 +25,7 @@ def parseRm5( file ):
                hit.QuerySeq.append(tempQList[i])
         hit.QueryStr = ''.join(hit.QuerySeq)       
         
-        hit.alignedTarget = values[19]
+        hit.alignedTarget = values[18]
         hit.TargetStrOrg = hit.alignedTarget
         tempTList = []  
         tempTList = list(hit.alignedTarget)
